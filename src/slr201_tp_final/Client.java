@@ -39,7 +39,7 @@ public class Client extends Thread{
             }
         }
         catch (Exception e) { e.printStackTrace(); return;}
-        System.out.println("[INIT] Client connected with port " + port + " and IP " + ipName);
+        System.out.println("[END] Client finished");
 	}
 	
 	public void run() {
@@ -63,6 +63,9 @@ public class Client extends Thread{
 		    	System.out.println("[" + id + "] Philosopher " + id + " finished eating");
 			}
 	    }
-        catch (Exception e) {  e.printStackTrace(); return;}
+        catch (Exception e) {
+        	System.out.println("[" + id + "] Server stopped");
+        	return;
+        }
 	}
 }
